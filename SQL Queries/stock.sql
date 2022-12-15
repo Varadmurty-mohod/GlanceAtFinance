@@ -1,0 +1,454 @@
+CREATE DATABASE IF NOT EXISTS glance_at_finance;
+CREATE TABLE IF NOT EXISTS daily_adjusted(
+stock_name VARCHAR(100),
+stock_day VARCHAR(20),
+stock_low FLOAT,
+stock_high FLOAT,
+stock_open FLOAT,
+stock_close FLOAT,
+stock_volume FLOAT,
+stock_dividend_amount FLOAT,
+stock_split_coefficient FLOAT,
+PRIMARY KEY (stock_day)
+);
+
+CREATE TABLE IF NOT EXISTS weekly(
+stock_name VARCHAR(100),
+stock_day VARCHAR(20),
+stock_open FLOAT,
+stock_high FLOAT,
+stock_low FLOAT,
+stock_close FLOAT,
+stock_volume FLOAT,
+PRIMARY KEY (stock_day)
+);
+
+CREATE TABLE IF NOT EXISTS monthly(
+stock_name VARCHAR(100),
+stock_day VARCHAR(20),
+stock_open FLOAT,
+stock_high FLOAT,
+stock_low FLOAT,
+stock_close FLOAT,
+stock_volume FLOAT,
+PRIMARY KEY (stock_day)
+);
+
+CREATE TABLE IF NOT EXISTS digital_currency_daily(
+Currency_name VARCHAR(100),
+Currency_day VARCHAR(20),
+open_CNY FLOAT,
+open_USD FLOAT,
+high_CNY FLOAT,
+high_USD FLOAT,
+low_CNY FLOAT,
+low_USD FLOAT,
+close_CNY FLOAT,
+close_USD FLOAT,
+volume FLOAT,
+market_cap_USD FLOAT,
+PRIMARY KEY (Currency_day)
+);
+
+CREATE TABLE IF NOT EXISTS intraday(
+stock_name VARCHAR(100),
+stock_day VARCHAR(20),
+stock_open FLOAT,
+stock_high FLOAT,
+stock_low FLOAT,
+stock_close FLOAT,
+stock_volume FLOAT,
+PRIMARY KEY (stock_day)
+);
+
+CREATE TABLE IF NOT EXISTS earnings(
+stock_name VARCHAR(100),
+fiscalDateEnding VARCHAR(20),
+reportedEPS FLOAT,
+PRIMARY KEY (fiscalDateEnding)
+);
+
+CREATE TABLE IF NOT EXISTS fxexchange(
+From_Currency VARCHAR(100),
+To_Currency VARCHAR(100),
+Exchange_Rate FLOAT,
+PRIMARY KEY (From_Currency)
+);
+
+CREATE TABLE IF NOT EXISTS fxdaily(
+FX_name VARCHAR(100),
+FX_from VARCHAR(20),
+FX_to VARCHAR(20),
+FX_open FLOAT,
+FX_high FLOAT,
+FX_low FLOAT,
+FX_close FLOAT,
+PRIMARY KEY (FX_from)
+);
+
+CREATE TABLE IF NOT EXISTS digital_currency_exchange(
+From_Currency VARCHAR(20),
+To_Currency VARCHAR(20),
+Exchange_Rate FLOAT,
+PRIMARY KEY (From_Currency)
+);
+
+CREATE TABLE IF NOT EXISTS fxweekly(
+FX_day VARCHAR(20),
+FX_from VARCHAR(20),
+FX_to VARCHAR(20),
+FX_open FLOAT,
+FX_high FLOAT,
+FX_low FLOAT,
+FX_close FLOAT,
+PRIMARY KEY (FX_day)
+);
+
+CREATE TABLE IF NOT EXISTS digital_currency_weekly(
+currency_name VARCHAR(100),
+currency_day VARCHAR(20),
+Market_Name VARCHAR(20),
+open_CNY FLOAT,
+open_USD FLOAT,
+high_CNY FLOAT,
+high_USD FLOAT,
+low_CNY FLOAT,
+low_USD FLOAT,
+close_CNY FLOAT,
+close_USD FLOAT,
+volume FLOAT,
+market_cap_USD FLOAT,
+PRIMARY KEY (Currency_day)
+);
+
+
+CREATE TABLE IF NOT EXISTS digital_currency_monthly(
+currency_name VARCHAR(100),
+currency_day VARCHAR(20),
+open_CNY FLOAT,
+open_USD FLOAT,
+high_CNY FLOAT,
+high_USD FLOAT,
+low_CNY FLOAT,
+low_USD FLOAT,
+close_CNY FLOAT,
+close_USD FLOAT,
+volume FLOAT,
+market_cap_USD FLOAT,
+PRIMARY KEY (Currency_day)
+);
+
+CREATE TABLE IF NOT EXISTS wma(
+wma_name VARCHAR(100),
+wma_day VARCHAR(20),
+wma_value FLOAT,
+PRIMARY KEY (wma_day)
+);
+
+CREATE TABLE IF NOT EXISTS dema(
+dema_name VARCHAR(100),
+dema_day VARCHAR(20),
+dema_value FLOAT,
+PRIMARY KEY (dema_day)
+);
+
+CREATE TABLE IF NOT EXISTS tema(
+tema_name VARCHAR(100),
+tema_day VARCHAR(20),
+tema_value FLOAT,
+PRIMARY KEY (tema_day)
+);
+
+CREATE TABLE IF NOT EXISTS trima(
+trima_name VARCHAR(100),
+trima_day VARCHAR(20),
+trima_value FLOAT,
+PRIMARY KEY (trima_day)
+);
+
+CREATE TABLE IF NOT EXISTS kama(
+kama_name VARCHAR(100),
+kama_day VARCHAR(20),
+kama_value FLOAT,
+PRIMARY KEY (kama_day)
+);
+
+CREATE TABLE IF NOT EXISTS mama(
+mama_name VARCHAR(100),
+mama_day VARCHAR(20),
+mama_value FLOAT,
+PRIMARY KEY (mama_day)
+);
+
+CREATE TABLE IF NOT EXISTS t3(
+t3_name VARCHAR(100),
+t3_day VARCHAR(20),
+t3_value FLOAT,
+PRIMARY KEY (t3_day)
+);
+
+CREATE TABLE IF NOT EXISTS macd(
+macd_name VARCHAR(100),
+macd_day VARCHAR(20),
+MACD_Signal FLOAT,
+MACD_Hist FLOAT,
+MACD_value FLOAT,
+PRIMARY KEY (macd_day)
+);
+
+CREATE TABLE IF NOT EXISTS stochf(
+STOCHF_name VARCHAR(100),
+STOCHF_day VARCHAR(20),
+FastD FLOAT,
+FastK FLOAT,
+PRIMARY KEY (STOCHF_day)
+);
+
+CREATE TABLE IF NOT EXISTS stochrsi(
+STOCHRSI_name VARCHAR(100),
+STOCHRSI_day VARCHAR(20),
+FastD FLOAT,
+FastK FLOAT,
+PRIMARY KEY (STOCHRSI_day)
+);
+
+CREATE TABLE IF NOT EXISTS willr(
+WILLR_name VARCHAR(100),
+WILLR_day VARCHAR(20),
+WILLR_value FLOAT,
+PRIMARY KEY (WILLR_day)
+);
+
+CREATE TABLE IF NOT EXISTS adxr(
+ADXR_name VARCHAR(100),
+ADXR_day VARCHAR(20),
+ADXR_value FLOAT,
+PRIMARY KEY (ADXR_day)
+);
+
+CREATE TABLE IF NOT EXISTS apo(
+APO_name VARCHAR(100),
+APO_day VARCHAR(20),
+APO_value FLOAT,
+PRIMARY KEY (APO_day)
+);
+
+CREATE TABLE IF NOT EXISTS ppo(
+PPO_name VARCHAR(100),
+PPO_day VARCHAR(20),
+PPO_value FLOAT,
+PRIMARY KEY (PPO_day)
+);
+
+CREATE TABLE IF NOT EXISTS mom(
+MOM_name VARCHAR(100),
+MOM_day VARCHAR(20),
+MOM_value FLOAT,
+PRIMARY KEY (MOM_day)
+);
+
+CREATE TABLE IF NOT EXISTS bop(
+BOP_name VARCHAR(100),
+BOP_day VARCHAR(20),
+BOP_value FLOAT,
+PRIMARY KEY (BOP_day)
+);
+
+CREATE TABLE IF NOT EXISTS cmo(
+CMO_name VARCHAR(100),
+CMO_day VARCHAR(20),
+CMO_value FLOAT,
+PRIMARY KEY (CMO_day)
+);
+
+CREATE TABLE IF NOT EXISTS roc(
+ROC_name VARCHAR(100),
+ROC_day VARCHAR(20),
+ROC_value FLOAT,
+PRIMARY KEY (ROC_day)
+);
+
+CREATE TABLE IF NOT EXISTS rocr(
+ROCR_name VARCHAR(100),
+ROCR_day VARCHAR(20),
+ROCR_value FLOAT,
+PRIMARY KEY (ROCR_day)
+);
+
+CREATE TABLE IF NOT EXISTS aroon(
+AROON_name VARCHAR(100),
+AROON_day VARCHAR(20),
+Aroon_Up FLOAT,
+Aroon_Down FLOAT,
+PRIMARY KEY (AROON_day)
+);
+
+CREATE TABLE IF NOT EXISTS aroonosc(
+AROONOSC_name VARCHAR(100),
+AROONOSC_day VARCHAR(20),
+AROONOSC_value FLOAT,
+PRIMARY KEY (AROONOSC_day)
+);
+
+CREATE TABLE IF NOT EXISTS mfi(
+MFI_name VARCHAR(100),
+MFI_day VARCHAR(20),
+MFI_value FLOAT,
+PRIMARY KEY (MFI_day)
+);
+
+CREATE TABLE IF NOT EXISTS trix(
+TRIX_name VARCHAR(100),
+TRIX_day VARCHAR(20),
+TRIX_value FLOAT,
+PRIMARY KEY (TRIX_day)
+);
+
+CREATE TABLE IF NOT EXISTS ultosc(
+ULTOSC_name VARCHAR(100),
+ULTOSC_day VARCHAR(20),
+ULTOSC_value FLOAT,
+PRIMARY KEY (ULTOSC_day)
+);
+
+CREATE TABLE IF NOT EXISTS dx(
+DX_name VARCHAR(100),
+DX_day VARCHAR(20),
+DX_value FLOAT,
+PRIMARY KEY (DX_day)
+);
+
+CREATE TABLE IF NOT EXISTS minusdi(
+MINUS_DI_name VARCHAR(100),
+MINUS_DI_day VARCHAR(20),
+MINUS_DI_value FLOAT,
+PRIMARY KEY (MINUS_DI_day)
+);
+
+CREATE TABLE IF NOT EXISTS plusdi(
+PLUS_DI_name VARCHAR(100),
+PLUS_DI_day VARCHAR(20),
+PLUS_DI_value FLOAT,
+PRIMARY KEY (PLUS_DI_day)
+);
+
+CREATE TABLE IF NOT EXISTS minusdm(
+MINUS_DM_name VARCHAR(100),
+MINUS_DM_day VARCHAR(20),
+MINUS_DM_value FLOAT,
+PRIMARY KEY (MINUS_DM_day)
+);
+
+CREATE TABLE IF NOT EXISTS plusdm(
+PLUS_DM_name VARCHAR(100),
+PLUS_DM_day VARCHAR(20),
+PLUS_DM_value FLOAT,
+PRIMARY KEY (PLUS_DM_day)
+);
+
+CREATE TABLE IF NOT EXISTS midpoint(
+MIDPOINT_name VARCHAR(100),
+MIDPOINT_day VARCHAR(20),
+MIDPOINT_value FLOAT,
+PRIMARY KEY (MIDPOINT_day)
+);
+
+CREATE TABLE IF NOT EXISTS midprice(
+MIDPRICE_name VARCHAR(100),
+MIDPRICE_day VARCHAR(20),
+MIDPRICE_value FLOAT,
+PRIMARY KEY (MIDPRICE_day)
+);
+
+CREATE TABLE IF NOT EXISTS sar(
+SAR_name VARCHAR(100),
+SAR_day VARCHAR(20),
+SAR_value FLOAT,
+PRIMARY KEY (SAR_day)
+);
+
+CREATE TABLE IF NOT EXISTS trange(
+TRANGE_name VARCHAR(100),
+TRANGE_day VARCHAR(20),
+TRANGE_value FLOAT,
+PRIMARY KEY (TRANGE_day)
+);
+
+CREATE TABLE IF NOT EXISTS atr(
+ATR_name VARCHAR(100),
+ATR_day VARCHAR(20),
+ATR_value FLOAT,
+PRIMARY KEY (ATR_day)
+);
+
+CREATE TABLE IF NOT EXISTS Natr(
+NATR_name VARCHAR(100),
+NATR_day VARCHAR(20),
+NATR_value FLOAT,
+PRIMARY KEY (NATR_day)
+);
+
+CREATE TABLE IF NOT EXISTS ad(
+AD_name VARCHAR(100),
+AD_day VARCHAR(20),
+AD_value FLOAT,
+PRIMARY KEY (AD_day)
+);
+
+CREATE TABLE IF NOT EXISTS adosc(
+ADOSC_name VARCHAR(100),
+ADOSC_day VARCHAR(20),
+ADOSC_value FLOAT,
+PRIMARY KEY (ADOSC_day)
+);
+
+CREATE TABLE IF NOT EXISTS obv(
+OBV_name VARCHAR(100),
+OBV_day VARCHAR(20),
+OBV_value FLOAT,
+PRIMARY KEY (OBV_day)
+);
+
+CREATE TABLE IF NOT EXISTS httrendline(
+HT_TRENDLINE_name VARCHAR(100),
+HT_TRENDLINE_day VARCHAR(20),
+HT_TRENDLINE_value FLOAT,
+PRIMARY KEY (HT_TRENDLINE_day)
+);
+
+CREATE TABLE IF NOT EXISTS htsine(
+HT_SINE_name VARCHAR(100),
+HT_SINE_day VARCHAR(20),
+LEAD_SINE FLOAT,
+SINE FLOAT,
+PRIMARY KEY (HT_SINE_day)
+);
+
+CREATE TABLE IF NOT EXISTS httrendmode(
+HT_TRENDMODE_name VARCHAR(100),
+HT_TRENDMODE_day VARCHAR(20),
+HT_TRENDMODE_VALUE FLOAT,
+PRIMARY KEY (HT_TRENDMODE_day)
+);
+
+CREATE TABLE IF NOT EXISTS htdcperiod(
+HT_DCPERIOD_name VARCHAR(100),
+HT_DCPERIOD_day VARCHAR(20),
+HT_DCPERIOD_VALUE FLOAT,
+PRIMARY KEY (HT_DCPERIOD_day)
+);
+
+CREATE TABLE IF NOT EXISTS htdcphase(
+HT_DCPHASE_name VARCHAR(100),
+HT_DCPHASE_day VARCHAR(20),
+HT_DCPHASE_VALUE FLOAT,
+PRIMARY KEY (HT_DCPHASE_day)
+);
+
+CREATE TABLE IF NOT EXISTS htphasor(
+HT_PHASOR_name VARCHAR(100),
+HT_PHASOR_day VARCHAR(20),
+QUADRATURE FLOAT,
+PHASE_value FLOAT,
+PRIMARY KEY (HT_PHASOR_day)
+);
