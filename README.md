@@ -4,7 +4,7 @@
 
 # • Crypto and Stock Database:
 
-- •	A database consisting of live crypto and stock profiles of companies, crypto currencies, live news about stock profiles and other financial metrics for Algorithmic Trading, which can give investment insight for individuals and organizations looking to invest in different scales.
+-	A database consisting of live crypto and stock profiles of companies, crypto currencies, live news about stock profiles and other financial metrics for Algorithmic Trading, which can give investment insight for individuals and organizations looking to invest in different scales.
 
 - Data will pulled live from various websites with aggregation as amethod to keep the data inputs aggregated for time periods. Application of this product on a larger scale can take in inputs from the user, such as; budget, investment term and other such preferences.
 
