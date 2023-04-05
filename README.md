@@ -1,6 +1,5 @@
 # GlanceAtFinance
 
-# Mohod_Varadmurty_002772803
 
 # • Crypto and Stock Database:
 
